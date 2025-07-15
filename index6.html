@@ -39,6 +39,29 @@
   </style>
 </head>
 <body class="font-sans text-gray-800 bg-white">
+<!-- PRELOADER -->
+<div id="preloader"
+  class="fixed inset-0 bg-blue-600 flex flex-col items-center justify-center z-[9999] transition-opacity duration-700">
+  <img src="https://i.ibb.co/933sMkrg/logo.png" alt="Logo New Vision" class="mb-8 h-16 w-auto" draggable="false" />
+  <div class="mb-6 flex items-center justify-center">
+    <span class="inline-block w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></span>
+  </div>
+  <span class="text-sm md:text-base font-medium text-white text-center max-w-[85vw] transition-all duration-500">
+    Conectando você ao mundo com qualidade e velocidade
+  </span>
+</div>
+
+<!-- Loader de transferência para WhatsApp -->
+<div id="whatsapp-loader"
+  class="fixed inset-0 bg-blue-600 bg-opacity-90 flex flex-col items-center justify-center z-[9999] transition-opacity duration-500 opacity-0 pointer-events-none">
+  <img src="https://i.ibb.co/933sMkrg/logo.png" alt="Logo New Vision" class="mb-8 h-12 w-auto" draggable="false" />
+  <div class="mb-6 flex items-center justify-center">
+    <span class="inline-block w-8 h-8 border-4 border-white border-t-transparent rounded-full animate-spin"></span>
+  </div>
+  <span class="text-sm md:text-base font-medium text-white text-center max-w-[85vw] transition-all duration-500">
+    Você está sendo transferido para nosso WhatsApp...
+  </span>
+</div>
 
   <!-- Top Social Nav -->
   <div class="bg-gray-900 py-2">
@@ -92,7 +115,7 @@
     </div>
   </header>
 
-  <!-- HERO SLIDER -->
+<!-- HERO SLIDER -->
 <section class="relative">
   <div class="swiper mySwiper h-[80vh] relative">
     <div class="swiper-wrapper">
@@ -146,12 +169,12 @@
           <!-- Box 1 -->
           <div class="swiper-slide border border-blue-600 rounded-lg p-6 flex items-center space-x-4">
             <i class="fa-solid fa-network-wired text-blue-600 text-3xl"></i>
-            <span class="text-[#333333] font-medium">Conexão 100% Fibra óptica, qualidade New Vision</span>
+            <span class="text-[#333333] font-medium">Conexão 100% Fibra óptica, qualidade e velocidade</span>
           </div>
           <!-- Box 2 -->
           <div class="swiper-slide border border-blue-600 rounded-lg p-6 flex items-center space-x-4">
             <i class="fa-solid fa-shield-alt text-blue-600 text-3xl"></i>
-            <span class="text-[#333333] font-medium">Navegue com rapidez e segurança com a New Vision</span>
+            <span class="text-[#333333] font-medium">Navegue com rapidez e segurança, sem interrupções</span>
           </div>
           <!-- Box 3 -->
           <div class="swiper-slide border border-blue-600 rounded-lg p-6 flex items-center space-x-4">
@@ -161,7 +184,7 @@
           <!-- Box 4 -->
           <div class="swiper-slide border border-blue-600 rounded-lg p-6 flex items-center space-x-4">
             <i class="fa-solid fa-headset text-blue-600 text-3xl"></i>
-            <span class="text-[#333333] font-medium">Suporte ágil e humanizado, tudo para você cliente!</span>
+            <span class="text-[#333333] font-medium">Suporte ágil e humanizado, sempre disponível</span>
           </div>
         </div>
         <!-- Pagination -->
@@ -286,14 +309,7 @@
       </div>
     </div>
   </section>
-<!-- Botão flutuante WhatsApp aprimorado -->
-<a href="https://wa.me/5511930608320" 
-   target="_blank"
-   aria-label="Fale conosco no WhatsApp"
-   class="fixed right-4 bottom-4 z-50 flex items-center bg-green-500 hover:bg-green-600 text-white rounded-full px-5 py-3 shadow-xl transition-all duration-200 group min-w-[180px]">
-  <i class="fa-brands fa-whatsapp text-2xl mr-3 group-hover:scale-110 transition-transform"></i>
-  <span class="font-semibold text-base tracking-wide select-none">Fale conosco</span>
-</a>
+
   <!-- SESSÃO DE SUPORTE -->
 <section id="suporte" class="bg-white py-16">
   <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -305,40 +321,42 @@
         <i class="fa-solid fa-headset text-4xl text-white"></i>
         <h3 class="mt-4 text-xl font-semibold text-white">Suporte Técnico</h3>
         <p class="text-white mt-2">Nossos especialistas estão disponíveis para ajudar em qualquer eventualidade.</p>
-        <a href="https://wa.me/5511930608320" target="_blank"><button class="mt-4 btn-fill bg-white text-blue-600 px-4 py-2 rounded-md font-medium">Solicitar Suporte</button></a>
+        <button onclick="goToWhatsApp()" class="mt-4 btn-fill bg-white text-blue-600 px-4 py-2 rounded-md font-medium">
+          Solicitar Suporte
+        </button>
       </div>
     </div>
     <!-- Divisor e serviços -->
     <div class="md:col-span-2">
-  <h3 class="text-xl font-semibold text-blue-600 mb-2">Serviços disponíveis via contato</h3>
-  <p class="text-sm text-gray-500 mb-6">Todos podem ser solicitados através do botão "Solicitar Suporte"</p>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-    <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
-      <i class="fa-solid fa-receipt text-2xl mb-2 text-blue-600"></i>
-      <h4 class="font-semibold text-blue-600">Segunda via de conta</h4>
+      <h3 class="text-xl font-semibold text-blue-600 mb-2">Serviços disponíveis via contato</h3>
+      <p class="text-sm text-gray-500 mb-6">Todos podem ser solicitados através do botão "Solicitar Suporte"</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <a target="_blank" href="https://newvisiontelecom.sgp.net.br/central"><div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
+          <i class="fa-solid fa-receipt text-2xl mb-2 text-blue-600"></i>
+          <h4 class="font-semibold text-blue-600">Segunda via de conta</h4>
+        </div></a>
+        <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
+          <i class="fa-solid fa-file-invoice-dollar text-2xl mb-2 text-blue-600"></i>
+          <h4 class="font-semibold text-blue-600">Conta detalhada</h4>
+        </div>
+        <a href="https://wa.me/5511970203372" target="_blank"><div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
+          <i class="fa-solid fa-handshake-angle text-2xl mb-2 text-blue-600"></i>
+          <h4 class="font-semibold text-blue-600">Negociação de conta</h4>
+        </div></a>
+        <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
+          <i class="fa-solid fa-globe text-2xl mb-2 text-blue-600"></i>
+          <h4 class="font-semibold text-blue-600">Ativação de conta online</h4>
+        </div>
+        <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
+          <i class="fa-solid fa-list-check text-2xl mb-2 text-blue-600"></i>
+          <h4 class="font-semibold text-blue-600">Acompanhar solicitações</h4>
+        </div>
+        <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
+          <i class="fa-solid fa-ellipsis-h text-2xl mb-2 text-blue-600"></i>
+          <h4 class="font-semibold text-blue-600">E muito mais</h4>
+        </div>
+      </div>
     </div>
-    <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
-      <i class="fa-solid fa-file-invoice-dollar text-2xl mb-2 text-blue-600"></i>
-      <h4 class="font-semibold text-blue-600">Conta detalhada</h4>
-    </div>
-    <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
-      <i class="fa-solid fa-handshake-angle text-2xl mb-2 text-blue-600"></i>
-      <h4 class="font-semibold text-blue-600">Negociação de conta</h4>
-    </div>
-    <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
-      <i class="fa-solid fa-globe text-2xl mb-2 text-blue-600"></i>
-      <h4 class="font-semibold text-blue-600">Ativação de conta online</h4>
-    </div>
-    <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
-      <i class="fa-solid fa-list-check text-2xl mb-2 text-blue-600"></i>
-      <h4 class="font-semibold text-blue-600">Acompanhar solicitações</h4>
-    </div>
-    <div class="border border-blue-600 bg-white p-6 rounded-lg text-center transition duration-200 hover:bg-black/10 cursor-pointer">
-      <i class="fa-solid fa-ellipsis-h text-2xl mb-2 text-blue-600"></i>
-      <h4 class="font-semibold text-blue-600">E muito mais</h4>
-    </div>
-  </div>
-  </div>
   </div>
 </section>
 
@@ -363,7 +381,6 @@
           <li><a href="#" class="hover:text-blue-600">Início</a></li>
           <li><a href="#planos" class="hover:text-blue-600">Planos</a></li>
           <li><a href="#suporte" class="hover:text-blue-600">Suporte</a></li>
-          <li><a href="#contato" class="hover:text-blue-600">Trabalhe conosco</a></li>
           <li><a href="#contato" class="hover:text-blue-600">Contato</a></li>
         </ul>
         <div class="mt-4 text-sm">
@@ -380,6 +397,15 @@
       © 2025 New Vision Telecom. Todos os direitos reservados. Desenvolvido por Murilo Barletta.
     </div>
   </footer>
+
+<!-- Botão flutuante WhatsApp aprimorado -->
+<a href="https://wa.me/5511930608320" 
+   target="_blank"
+   aria-label="Fale conosco no WhatsApp"
+   class="fixed right-4 bottom-4 z-50 flex items-center bg-green-500 hover:bg-green-600 text-white rounded-full px-5 py-3 shadow-xl transition-all duration-200 group min-w-[180px]">
+  <i class="fa-brands fa-whatsapp text-2xl mr-3 group-hover:scale-110 transition-transform"></i>
+  <span class="font-semibold text-base tracking-wide select-none">Fale conosco</span>
+</a>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -429,6 +455,35 @@
         }
       });
     });
+    
+    // Tempo mínimo de exibição em ms
+  const minTime = 3000;
+  const loadTime = Date.now();
+  const preloader = document.getElementById('preloader');
+
+  window.addEventListener('load', () => {
+    const elapsed = Date.now() - loadTime;
+    const remaining = minTime - elapsed;
+    setTimeout(() => {
+      preloader.classList.add('opacity-0');
+      setTimeout(() => {
+        if (preloader) preloader.remove();
+      }, 700); // igual ao duration-700 do Tailwind
+    }, remaining > 0 ? remaining : 0);
+  });
+  
+  function goToWhatsApp() {
+    const loader = document.getElementById('whatsapp-loader');
+    loader.classList.remove('opacity-0', 'pointer-events-none');
+    loader.classList.add('opacity-100');
+    // Aguarda 1 segundo e redireciona
+    setTimeout(() => {
+      window.open('https://wa.me/5511930608320', '_blank');
+      loader.classList.add('opacity-0', 'pointer-events-none');
+      loader.classList.remove('opacity-100');
+    }, 2000);
+  }
   </script>
+
 </body>
 </html>
