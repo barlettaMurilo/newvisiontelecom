@@ -1,43 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Vision Telecom</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    .swiper-progress { position: absolute; bottom: 0; left: 0; height: 8px; background: #1e40af; z-index: 20; }
-    .sob-medida-card { min-height: 380px; }
-    .btn-fill {
-      position: relative;
-      overflow: hidden;
-      z-index: 0;
-      background-color: white;
-      transition: color 0.3s ease;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Vision Telecom | Internet de qualidade com fibra óptica</title>
+    <meta name="description" content="Internet fibra óptica com alta velocidade, suporte 24h e planos acessíveis para residências e empresas. Conheça a New Vision Telecom." />
+    <meta name="keywords" content="internet fibra óptica, planos de internet, provedor de internet SBC, New Vision Telecom, suporte 24h, internet rápida" />
+    <meta name="author" content="New Vision Telecom" />
+    <meta property="og:title" content="New Vision Telecom | Internet de qualidade" />
+    <meta property="og:description" content="Conheça os planos de internet da New Vision Telecom com fibra óptica e suporte de qualidade." />
+    <meta property="og:image" content="https://i.ibb.co/933sMkrg/logo.png" />
+    <meta property="og:url" content="https://newvisiontelecom.com.br" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://newvisiontelecom.com.br" />
+  
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/933sMkrg/logo.png" type="image/png">
+  
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <!-- Swiper CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+    <!-- SEO Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "New Vision Telecom",
+      "image": "https://i.ibb.co/933sMkrg/logo.png",
+      "@id": "",
+      "url": "https://newvisiontelecom.com.br",
+      "telephone": "+551150267955",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Luiz Pequini, 1495",
+        "addressLocality": "São Bernardo do Campo",
+        "addressRegion": "SP",
+        "postalCode": "09663-000",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://instagram.com/newvisiontelecom",
+        "https://wa.me/5511930608320"
+      ]
     }
-    .btn-fill::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background: #1e40af;
-      transition: width 0.3s ease;
-      z-index: -1;
-    }
-    .btn-fill:hover::before {
-      width: 100%;
-    }
-    .btn-fill:hover {
-      color: white !important;
-    }
-  </style>
-</head>
+    </script>
+  
+    <!-- Custom Styles -->
+    <style>
+      .swiper-progress { position: absolute; bottom: 0; left: 0; height: 8px; background: #1e40af; z-index: 20; }
+      .sob-medida-card { min-height: 380px; }
+      .btn-fill {
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+        background-color: white;
+        transition: color 0.3s ease;
+      }
+      .btn-fill::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #1e40af;
+        transition: width 0.3s ease;
+        z-index: -1;
+      }
+      .btn-fill:hover::before {
+        width: 100%;
+      }
+      .btn-fill:hover {
+        color: white !important;
+      }
+    </style>
+  </head>
 <body class="font-sans text-gray-800 bg-white">
 <!-- PRELOADER -->
 <div id="preloader"
@@ -394,7 +438,7 @@
       </div>
     </div>
     <div class="bg-gray-200 py-4 text-center text-xs">
-      © 2025 New Vision Telecom. Todos os direitos reservados. Desenvolvido por Murilo Barletta.
+      © 2025 New Vision Telecom. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/murilobarlett4/" target="_blank" class="text-blue-600 hover:text-blue-700">Murilo Barletta</a>.
     </div>
   </footer>
 
@@ -483,6 +527,48 @@
       loader.classList.remove('opacity-100');
     }, 2000);
   }
+
+  // Altura do seu header fixo (ajuste conforme necessário)
+  const HEADER_HEIGHT = 72; // px
+
+  function smoothScrollTo(to, duration = 600) {
+    const start = window.scrollY || window.pageYOffset;
+    const change = to - start;
+    let currentTime = 0;
+    const increment = 16;
+
+    function animateScroll(){
+      currentTime += increment;
+      const val = easeInOutQuad(currentTime, start, change, duration);
+      window.scrollTo(0, val);
+      if(currentTime < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+      t /= d/2;
+      if(t < 1) return c/2*t*t + b;
+      t--;
+      return -c/2 * (t*(t-2) - 1) + b;
+    }
+
+    animateScroll();
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href.length > 1 && document.querySelector(href)) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        const rect = target.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const offsetPosition = rect.top + scrollTop - HEADER_HEIGHT;
+        smoothScrollTo(offsetPosition, 700); // 700ms = bem suave
+      }
+    });
+  });
   </script>
 
 </body>
